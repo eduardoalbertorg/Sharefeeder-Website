@@ -77,10 +77,11 @@ WSGI_APPLICATION = 'Sharefeeder.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'init_command': 'SET default_storage_engine=INNODB',
-            'read_default_file': 'database.cnf',
-        }
+        'NAME': 'Sharefeeder',
+        'USER': 'root',
+        'PASSWORD': 'asda',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
