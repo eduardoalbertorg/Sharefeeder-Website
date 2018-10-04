@@ -1,0 +1,5 @@
+[client]
+Sharefeeder = NAME
+root = USER
+asda = PASSWORD
+default-character-set = utf8
