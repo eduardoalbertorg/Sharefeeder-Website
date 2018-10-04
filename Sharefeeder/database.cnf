@@ -1,0 +1,5 @@
+[client]
+database = Sharefeeder
+user = root
+password = asda
+default-character-set = utf8
