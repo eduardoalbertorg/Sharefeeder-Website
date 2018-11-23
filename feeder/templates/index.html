@@ -14,18 +14,48 @@
     </head>
     <body>
         <div id="app">
-            <v-app id="inspire">
-                <v-toolbar>
-                <v-toolbar-side-icon></v-toolbar-side-icon>
-                <v-toolbar-title>Sharefeeder</v-toolbar-title>
-                <v-spacer></v-spacer>
-                <v-toolbar-items class="hidden-sm-and-down">
-                    <v-btn flat>Link One</v-btn>
-                    <v-btn flat>Link Two</v-btn>
-                    <v-btn flat>Link Three</v-btn>
-                </v-toolbar-items>
-                </v-toolbar>
-            </v-app>
+            <template>
+                <v-app id="inspire">
+                    <v-toolbar>
+                    <v-toolbar-side-icon></v-toolbar-side-icon>
+                    <v-toolbar-title>
+                        <router-link to="/feeder" exact>Sharefeeder</router-link>
+                    </v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-toolbar-items class="hidden-sm-and-down">
+                        <v-btn flat>Iniciar sesion</v-btn>
+                        <v-btn flat>Registrarse</v-btn>
+                        <v-btn flat>Contacto</v-btn>
+                    </v-toolbar-items>
+                    </v-toolbar>
+                    <v-spacer></v-spacer>
+
+                    <!-- Centers everything -->
+                    <v-container>
+                        <v-layout column align-center>
+                            <v-layout row>
+                                <v-flex p>
+                                    <v-select :items="items" label="Alimentadoras" v-model="selectFeeder"></v-select>
+                                </v-flex>
+                                <v-flex x1 class="pt-2">
+                                    <v-btn
+                                            color="blue"
+                                            class="white--text"
+                                            @click="loader = 'loading3'"
+                                    >
+                                        Seleccionar alimentadora
+                                        <v-icon right dark>done</v-icon>
+                                    </v-btn>
+                                </v-flex>
+                            </v-layout>
+                        </v-layout>
+                    </v-container>
+                </v-app>
+            </template>
+        </div>
+
+        <div id="content">
+
         </div>
 
         {% load static %}
