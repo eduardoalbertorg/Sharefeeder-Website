@@ -1,0 +1,25 @@
+{% extends "feeder/header.html" %}
+
+{% block content %}
+    <v-spacer></v-spacer>
+    <!-- Centers everything -->
+    <v-container>
+        <v-layout column align-center>
+            <v-layout row>
+                <v-flex p>
+                    <v-select :items="items" label="Alimentadoras" v-model="selectFeeder"></v-select>
+                </v-flex>
+                <v-flex x1 class="pt-2">
+                    <v-btn
+                            color="blue"
+                            class="white--text"
+                            @click=""
+                    >
+                        Seleccionar alimentadora
+                        <v-icon right dark>done</v-icon>
+                    </v-btn>
+                </v-flex>
+            </v-layout>
+        </v-layout>
+    </v-container>
+{% endblock %}
