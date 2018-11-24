@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "feeder/header.html" %}
+
+
+{% block content %}
+    <v-spacer></v-spacer>
+    <!-- Centers everything -->
+    <v-container>
+        <v-layout column align-center>
+            <v-layout row>
+                <v-card>
+                    <v-img
+                        src="static/feeder/img/nala.jpeg"
+                        aspect-ratio="1"
+                    ></v-img>
+                    <v-card-title primary-title>
+                        <div>
+                            <h3 class="headline mb-0">Acerca de la app</h3>
+                            <div>
+                                Esta app fue desarrollada con la idea de que cada semestre hay perros que ocupan comer,<br>
+                                y una forma sencilla de apoyarlos sería que les dieramos nosotros sin tener que
+                                depender de los guardias, <br> o que no traigamos comida para perro en ese momento.
+                                <br>
+                                <br>
+                                Cualquier duda, o aclaracion que se requiera usamos el correo:
+                                <br>
+                                <br>
+                                dudas@sharefeeder.com.mx
+                            </div>
+                        </div>
+                    </v-card-title>
+                </v-card>
+
+            </v-layout>
+        </v-layout>
+    </v-container>
+{% endblock %}
