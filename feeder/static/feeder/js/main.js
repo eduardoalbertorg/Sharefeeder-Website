@@ -7,6 +7,9 @@ new Vue({
     },
 
     data: () => ({
+        quantityToPay: '',
+        mask: '######',
+        total: 0,
         signupName: "",
         signupEmail: "",
         signupPassword: "",
@@ -46,7 +49,10 @@ new Vue({
             this.password = ""
             this.selectFeeder = null
             this.$validator.reset()
-        }
+        },
+        changeTotal: function(amount) {
+          total = amount
+        },
     },
 
 });
