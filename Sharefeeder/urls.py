@@ -16,15 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .routers import router
-from django.views.generic import TemplateView
+#from django.views.generic import TemplateView
 
 urlpatterns = [
+    path('', include('feeder.urls')),
+    path('about', include('feeder.urls')),
+    path('sign', include('feeder.urls')),
+    path('feederCart', include('feeder.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    #path(r'^$', include('feeder.urls')), no guork
-    path('', TemplateView.as_view(template_name='feeder/home.html')),
-    path('about', TemplateView.as_view(template_name='feeder/about.html')),
-    path('sign', TemplateView.as_view(template_name='feeder/sign.html')),
-    path('feederCart', TemplateView.as_view(template_name='feeder/feederCart.html')),
+
+    #Used TemplateView as navigation method
+    #path('', TemplateView.as_view(template_name='feeder/home.html')),
+    #path('about', TemplateView.as_view(template_name='feeder/about.html')),
+    #path('sign', TemplateView.as_view(template_name='feeder/sign.html')),
+    #path('feederCart', TemplateView.as_view(template_name='feeder/feederCart.html')),
     #path('feeder', TemplateView.as_view(template_name='index.html')),
 ]

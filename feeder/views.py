@@ -9,3 +9,11 @@ def index(request):
 
 def about(request):
     return render(request, "feeder/about.html")
+
+
+def sign(request):
+    return render(request, "feeder/sign.html")
+
+
+def feederCart(request):
+    return render(request, "feeder/feederCart.html")

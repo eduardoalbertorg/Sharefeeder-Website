@@ -15,6 +15,7 @@ new Vue({
         signupPassword: "",
         signinEmail: "",
         signinPassword: "",
+        items: 0,
         selectFeeder: null,
         show1: false,
         dictionary: {
