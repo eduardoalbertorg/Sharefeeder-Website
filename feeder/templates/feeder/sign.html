@@ -1,0 +1,91 @@
+{% extends "feeder/header.html" %}
+
+
+{% block content %}
+    <v-spacer></v-spacer>
+    <!-- Centers everything -->
+    <v-container>
+        <v-layout column align-center>
+            <v-spacer></v-spacer>
+
+            <v-container grid-list-md text-xs-center>
+                <v-layout row wrap>
+                    <v-flex xs6>
+                        <v-card class="elevation-12">
+                            <v-toolbar dark color="primary">
+                                <v-toolbar-title>Registro</v-toolbar-title>
+                            </v-toolbar>
+                            <v-card-text>
+                                <v-form id="formSignup">
+                                    <v-text-field
+                                        prepend-icon="person"
+                                        v-validate="'required|max:85'"
+                                        v-model="signupName"
+                                        :counter="85"
+                                        :error-messages="errors.collect('name')"
+                                        label="Nombre"
+                                        data-vv-name="signupName"
+                                        required
+                                    ></v-text-field>
+                                    <v-text-field
+                                        prepend-icon="email"
+                                        v-validate="'required|email'"
+                                        v-model="signupEmail"
+                                        :error-messages="errors.collect('email')"
+                                        label="E-mail"
+                                        data-vv-name="signupEmail"
+                                        required
+                                    ></v-text-field>
+                                    <v-text-field
+                                        prepend-icon="lock"
+                                        v-validate="'alpha'"
+                                        v-model="signupPassword"
+                                        :type="'password'"
+                                        data-vv-name="signupPassword"
+                                        hint="Al menos 4 caracteres"
+                                    ></v-text-field>
+                                </v-form>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="primary">Registrarse</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-flex>
+                    <v-flex xs6>
+                        <v-card class="elevation-12">
+                            <v-toolbar dark color="primary">
+                                <v-toolbar-title>Inicio de sesion</v-toolbar-title>
+                            </v-toolbar>
+                            <v-card-text>
+                                <v-form id="formLogin">
+                                    <v-text-field
+                                        prepend-icon="email"
+                                        v-validate="'required|email'"
+                                        v-model="signinEmail"
+                                        :error-messages="errors.collect('email')"
+                                        label="E-mail"
+                                        data-vv-name="signinEmail"
+                                        required
+                                    ></v-text-field>
+                                    <v-text-field
+                                        prepend-icon="lock"
+                                        v-validate="'alpha'"
+                                        v-model="signinPassword"
+                                        :type="'password'"
+                                        data-vv-name="signinPassword"
+                                        hint="Al menos 4 caracteres"
+                                    ></v-text-field>
+                                </v-form>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="primary">Ingresar</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
+            </v-container>
+        </v-layout>
+    </v-container>
+{% endblock %}

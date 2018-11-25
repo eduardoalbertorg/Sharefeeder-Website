@@ -24,5 +24,6 @@ urlpatterns = [
     #path(r'^$', include('feeder.urls')), no guork
     path('', TemplateView.as_view(template_name='feeder/home.html')),
     path('about', TemplateView.as_view(template_name='feeder/about.html')),
+    path('sign', TemplateView.as_view(template_name='feeder/sign.html')),
     #path('feeder', TemplateView.as_view(template_name='index.html')),
 ]
