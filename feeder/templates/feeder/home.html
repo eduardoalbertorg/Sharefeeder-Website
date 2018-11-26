@@ -7,14 +7,17 @@
         <v-layout column align-center>
             <v-layout row>
                 <v-flex p>
-                    <v-select :items="items" label="Alimentadoras" v-model="selectFeeder"></v-select>
+                    <v-select
+                        :items="{{ feederList }}"
+                        label="Alimentadoras"
+                        v-model="selectFeeder"
+                        single-line
+                        item-text="fields.name"
+                        item-value="fields.id"
+                    ></v-select>
                 </v-flex>
                 <v-flex x1 class="pt-2">
-                    <v-btn
-                            color="blue"
-                            class="white--text"
-                            href="/feederCart"
-                    >
+                    <v-btn color="blue" class="white--text" href="/feederCart">
                         Seleccionar alimentadora
                         <v-icon right dark>done</v-icon>
                     </v-btn>
