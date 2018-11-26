@@ -1,17 +1,17 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+from django.core import serializers
+
 from rest_framework import viewsets
 from .models import User, Credential, Feeder, Galileo
 from .serializers import UserSerializer, CredentialSerializer, FeederSerializer, GalileoSerializer
-import json
-from django.core import serializers
+from .forms import FeederForm
+
 
 # Create your views here.
 def index(request):
-    # feederList = Feeder.objects.all()
-    # feederList = [[feeder.id, unicode[x] for feeder in Feeder.objects.all()]
-    #options_for_js = json.dumps(options)
     feederList = serializers.serialize("json", Feeder.objects.all())
-    print(feederList)
     return render(request, 'feeder/home.html', {'feederList': feederList})
 
 
@@ -23,8 +23,8 @@ def sign(request):
     return render(request, "feeder/sign.html")
 
 
-def feederCart(request):
-    return render(request, "feeder/feederCart.html")
+def feederCart(request, feeder_id=None):
+        return render(request, "feeder/feederCart.html", {'feeder_id', feeder_id})
 
 
 class UserViewSet(viewsets.ModelViewSet):
