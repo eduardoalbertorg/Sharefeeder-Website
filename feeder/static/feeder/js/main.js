@@ -15,6 +15,7 @@ new Vue({
         signupPassword: "",
         signinEmail: "",
         signinPassword: "",
+        feeders: [],
         selectFeeder: null,
         show1: false,
         dictionary: {
@@ -37,6 +38,10 @@ new Vue({
 
     mounted () {
         this.$validator.localize('en', this.dictionary)
+    },
+
+    created() {
+
     },
 
     methods: {
