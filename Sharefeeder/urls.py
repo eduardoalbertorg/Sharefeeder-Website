@@ -29,7 +29,6 @@ router.register(r'galileos', views.GalileoViewSet)
 
 urlpatterns = [
     path('', include('feeder.urls')),
-    path('about', include('feeder.urls')),
     path('sign', include('feeder.urls')),
     path('feederCart', include('feeder.urls')),
     path('admin/', admin.site.urls),
