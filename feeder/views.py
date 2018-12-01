@@ -19,10 +19,6 @@ def about(request):
     return render(request, "feeder/about.html")
 
 
-def sign(request):
-    return render(request, "feeder/sign.html")
-
-
 def feederCart(request, feeder_id=None):
         return render(request, "feeder/feederCart.html", {'feeder_id', feeder_id})
 
